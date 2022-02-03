@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #advert, #promo{
+        width:800px;
+
+
+    }
+    div img {
+     width:100%;
+    }
+</style>
+<body>
+<div id='advert'
+>
+<script type="text/javascript">
+function createImageElement()
+{ const IMG=document.createElement('img')
+IMG.setAttribute('src',"https://pbs.twimg.com/media/EWDy4pdWkAA-NbK.jpg:large")
+return IMG
+}
+    setTimeout(function(){
+    if(Math.random()<=0.6){
+    document.querySelector("#advert").appendChild(createImageElement())
+    }
+    },2000);
+</script>
+</div>
+
+<div id='promo' style="display:none;">
+    <img src="https://image.tmdb.org/t/p/original/iXe4t0WMT4gGoyzt7J3i5aGkU52.jpg">
+</div>
+
+
+    <script type="text/javascript">
+    const promo=document.querySelector("#promo");
+    const idInterval=setInterval(()=>{
+    if(document.querySelectorAll("#advert img").length==0){
+        promo.style.display='block';
+        }else{
+        promo.style.display='none'
+        clearInterval(idInterval);
+        }
+
+    },3000)
+        document.querySelector("#advert>script").addEventListener('load',function(){
+
+        })
+
+    </script>
+
+</body>
+</html>
